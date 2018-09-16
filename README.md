@@ -1,5 +1,5 @@
 # phenoscanner
-phenoscanner allows user to query the PhenoScanner database of genotype-phenotype associations from inside R.
+phenoscanner allows users to query the PhenoScanner database of genotype-phenotype associations from inside R.
 
 # Functions
 * phenoscanner - this function allows users to query the PhenoScanner database from inside R 
