@@ -11,17 +11,17 @@ phenoscanner allows user to query the PhenoScanner database of genotype-phenotyp
 4. library(phenoscanner)
 
 # Examples 
-\# SNP 
-res <- phenoscanner(snpquery="rs10840293")
-head(res$results)
-res$snps
+\# SNP  
+res <- phenoscanner(snpquery="rs10840293")  
+head(res$results)  
+res$snps  
 
-\# Gene
-res <- phenoscanner(genequery="SWAP70")
-head(res$results) 
-res$snps
+\# Gene  
+res <- phenoscanner(genequery="SWAP70")  
+head(res$results)  
+res$snps  
 
-\# Region
-res <- phenoscanner(regionquery="chr11:9685624-9774538")
-head(res$results)
-res$regions
+\# Region  
+res <- phenoscanner(regionquery="chr11:9685624-9774538")  
+head(res$results)  
+res$regions  
