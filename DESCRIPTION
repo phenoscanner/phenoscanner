@@ -1,0 +1,16 @@
+Package: phenoscanner
+Title: R package to query PhenoScanner from R
+Version: 1.0
+Author: PhenoScanner
+Maintainer: PhenoScanner <phenoscanner@gmail.com>
+Description: R package to query PhenoScanner from R.
+Depends:
+    R (>= 3.2.0),
+    methods
+License: GPL (>= 2)
+ByteCompile: TRUE
+LazyData: TRUE
+Encoding: UTF-8
+Imports: 
+    rjson
+RoxygenNote: 6.0.1
