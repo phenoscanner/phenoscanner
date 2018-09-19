@@ -55,7 +55,7 @@ phenoscanner <- function(snpquery=NULL, genequery=NULL, regionquery=NULL, catalo
       if(i < n_queries){qsnps <- paste0(snpquery[(1+10*(i-1)):(10*i)], collapse="+")}else{qsnps <- paste0(snpquery[(1+10*(i-1)):length(snpquery)], collapse="+")}
       json_file <- paste0("http://www.phenoscanner.medschl.cam.ac.uk/api/?snpquery=",qsnps,"&catalogue=",catalogue,"&p=",pvalue,"&proxies=",proxies,"&r2=",r2,"&build=",build)
       json_data <- fromJSON(file=json_file)
-      if(length(json_data$results)==0){
+      if(length(json_data$results)==0 | length(json_data$snps)==0){
         print(paste0("Error: ",json_data$error))
         next
       }
@@ -86,7 +86,7 @@ phenoscanner <- function(snpquery=NULL, genequery=NULL, regionquery=NULL, catalo
     for(i in 1:n_queries){
       json_file <- paste0("http://www.phenoscanner.medschl.cam.ac.uk/api/?genequery=",genequery[i],"&catalogue=",catalogue,"&p=",pvalue,"&proxies=None&r2=1&build=",build)
       json_data <- fromJSON(file=json_file)
-      if(length(json_data$results)==0){
+      if(length(json_data$results)==0 | length(json_data$genes)==0){
         print(paste0("Error: ", json_data$error))
         next
       }
@@ -117,7 +117,7 @@ phenoscanner <- function(snpquery=NULL, genequery=NULL, regionquery=NULL, catalo
     for(i in 1:n_queries){
       json_file <- paste0("http://www.phenoscanner.medschl.cam.ac.uk/api/?regionquery=",regionquery[i],"&catalogue=",catalogue,"&p=",pvalue,"&proxies=None&r2=1&build=",build)
       json_data <- fromJSON(file=json_file)
-      if(length(json_data$results)==0){
+      if(length(json_data$results)==0 | length(json_data$locations)==0){
         print(paste0("Error: ",json_data$error))
         next
       }
