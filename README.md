@@ -28,3 +28,6 @@ res$regions
 
 ## Citation
 Staley JR et al. PhenoScanner: a database of human genotype-phenotype associations. Bioinformatics 2016;32(20):3207-3209.
+
+## Terms of use
+Please abide by the [terms of use](http://www.phenoscanner.medschl.cam.ac.uk/about/#terms) of PhenoScanner when using this R package.
