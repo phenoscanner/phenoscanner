@@ -19,7 +19,7 @@ res$snps
 \# Gene  
 res <- phenoscanner(genequery="SWAP70")  
 head(res$results)  
-res$snps  
+res$genes  
 
 \# Region  
 res <- phenoscanner(regionquery="chr11:9685624-9774538")  
