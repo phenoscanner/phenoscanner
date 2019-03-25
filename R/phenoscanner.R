@@ -30,10 +30,9 @@
 #' @export
 
 phenoscanner <- function(snpquery=NULL, genequery=NULL, regionquery=NULL, catalogue="GWAS", pvalue=1E-5, proxies="None", r2=0.8, build=37){
-  cat("PhenoScanner V2")
-  cat("Information: Each user can query a maximum of 500 SNPs, 50 genes or 50 regions per hour. For large batch queries, please ask to download the data from www.phenoscanner.medschl.cam.ac.uk/data.")
-  cat("Terms of use: Please refer to the terms of use when using PhenoScanner V2 (www.phenoscanner.medschl.cam.ac.uk/about). If you use the results from PhenoScanner in a publication or presentation, please cite all of the relevant references of the data used and the PhenoScanner publication: Staley JR et al., Bioinformatics 2016; 32(20):3207-3209")
-  cat("")
+  cat("PhenoScanner V2\n\n")
+  cat("Information: Each user can query a maximum of 500 SNPs, 50 genes or 50 regions per hour. For large batch queries, please ask to download the data from www.phenoscanner.medschl.cam.ac.uk/data.\n")
+  cat("Terms of use: Please refer to the terms of use when using PhenoScanner V2 (www.phenoscanner.medschl.cam.ac.uk/about). If you use the results from PhenoScanner in a publication or presentation, please cite all of the relevant references of the data used and the PhenoScanner publication: Staley JR et al., Bioinformatics 2016; 32(20):3207-3209\n\n")
   if(is.null(snpquery) & is.null(regionquery) & is.null(genequery)) stop("no query has been requested")
   if((length(snpquery[1])+length(regionquery[1])+length(genequery[1]))>1) stop("only one query type allowed")
   if(!(catalogue=="None" | catalogue=="GWAS" | catalogue=="eQTL" | catalogue=="pQTL" | catalogue=="mQTL" | catalogue=="methQTL")) stop("catalogue has to be one of None, GWAS, eQTL, pQTL, mQTL or methQTL")
