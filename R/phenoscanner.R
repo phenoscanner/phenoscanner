@@ -80,7 +80,8 @@ phenoscanner <- function(snpquery=NULL, genequery=NULL, regionquery=NULL, catalo
           tables_snps <- as.data.frame(matrix(unlist(json_data$snps), ncol=length(fields_snps), byrow=T))
           names(tables_snps) <- fields_snps
           snps <- rbind(snps,tables_snps)
-        }
+          if(length(json_data$results)==0){if(length(snpquery)==1){print(paste0(snpquery," -- queried"))}else{print(paste0(i," -- chunk of 10 SNPs queried"))}}
+        }else{if(length(json_data$results)==0){if(length(snpquery)==1){print(paste0("Error: no results found for ",snpquery))}else{print(paste0("Error: no results found for chunk ",i))}}}
       }
     }
     output <- list(snps=snps, results=results)
