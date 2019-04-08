@@ -24,7 +24,12 @@ res$genes
 \# Region  
 res <- phenoscanner(regionquery="chr11:9685624-9774538")  
 head(res$results)  
-res$regions 
+res$regions  
+
+\# To query multiple SNPs, genes or regions, please supply a vector of SNPs, genes or regions, e.g.:
+res <- phenoscanner(snpquery=c("rs10840293","rs10"))  
+head(res$results)  
+res$snps 
 
 ## Citation
 Staley JR et al. PhenoScanner: a database of human genotype-phenotype associations. Bioinformatics 2016;32(20):3207-3209.
