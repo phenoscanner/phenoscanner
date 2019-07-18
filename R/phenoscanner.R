@@ -77,7 +77,7 @@ phenoscanner <- function(snpquery=NULL, genequery=NULL, regionquery=NULL, catalo
       if(length(json_data$snps)>0){
         fields_snps <- json_data$snps[[1]]; json_data$snps[[1]] <- NULL
         if(length(json_data$snps)>0){
-          tables_snps <- as.data.frame(matrix(unlist(json_data$snps), ncol=length(fields_snps), byrow=T))
+          tables_snps <- as.data.frame(matrix(unlist(json_data$snps), ncol=length(fields_snps), byrow=T), stringsAsFactors=F)
           names(tables_snps) <- fields_snps
           snps <- rbind(snps,tables_snps)
           if(length(json_data$results)==0){if(length(snpquery)==1){print(paste0(snpquery," -- queried"))}else{print(paste0(i," -- chunk of 10 SNPs queried"))}}
@@ -109,7 +109,7 @@ phenoscanner <- function(snpquery=NULL, genequery=NULL, regionquery=NULL, catalo
       if(length(json_data$genes)>0){
         fields_genes <- json_data$genes[[1]]; json_data$genes[[1]] <- NULL
         if(length(json_data$genes)>0){
-          tables_genes <- as.data.frame(matrix(unlist(json_data$genes), ncol=length(fields_genes), byrow=T))
+          tables_genes <- as.data.frame(matrix(unlist(json_data$genes), ncol=length(fields_genes), byrow=T), stringsAsFactors=F)
           names(tables_genes) <- fields_genes
           genes <- rbind(genes,tables_genes)
         }
@@ -140,7 +140,7 @@ phenoscanner <- function(snpquery=NULL, genequery=NULL, regionquery=NULL, catalo
       if(length(json_data$locations)>0){
         fields_regions <- json_data$locations[[1]]; json_data$locations[[1]] <- NULL
         if(length(json_data$locations)>0){
-          tables_regions <- as.data.frame(matrix(unlist(json_data$locations), ncol=length(fields_regions), byrow=T))
+          tables_regions <- as.data.frame(matrix(unlist(json_data$locations), ncol=length(fields_regions), byrow=T), stringsAsFactors=F)
           names(tables_regions) <- fields_regions
           regions <- rbind(regions,tables_regions)
         }
