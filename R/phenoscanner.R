@@ -72,7 +72,7 @@ phenoscanner <- function(snpquery=NULL, genequery=NULL, regionquery=NULL, catalo
           names(tables) <- fields
           results <- rbind(results,tables)
           if(length(snpquery)==1){print(paste0(snpquery," -- queried"))}else{print(paste0(i," -- chunk of 10 SNPs queried"))}
-        }else{if(length(snpquery)==1){print(paste0("Error: no results found for ",snpquery))}else{print(paste0("Error: no results found for chunk ",i))}}
+        }else{if(length(snpquery)==1){print(paste0("Warning: no results found for ",snpquery))}else{print(paste0("Warning: no results found for chunk ",i))}}
       }
       if(length(json_data$snps)>0){
         fields_snps <- json_data$snps[[1]]; json_data$snps[[1]] <- NULL
@@ -81,7 +81,7 @@ phenoscanner <- function(snpquery=NULL, genequery=NULL, regionquery=NULL, catalo
           names(tables_snps) <- fields_snps
           snps <- rbind(snps,tables_snps)
           if(length(json_data$results)==0){if(length(snpquery)==1){print(paste0(snpquery," -- queried"))}else{print(paste0(i," -- chunk of 10 SNPs queried"))}}
-        }else{if(length(json_data$results)==0){if(length(snpquery)==1){print(paste0("Error: no results found for ",snpquery))}else{print(paste0("Error: no results found for chunk ",i))}}}
+        }else{if(length(json_data$results)==0){if(length(snpquery)==1){print(paste0("Warning: no results found for ",snpquery))}else{print(paste0("Warning: no results found for chunk ",i))}}}
       }
     }
     output <- list(snps=snps, results=results)
@@ -104,7 +104,7 @@ phenoscanner <- function(snpquery=NULL, genequery=NULL, regionquery=NULL, catalo
           names(tables) <- fields
           results <- rbind(results,tables)
           print(paste0(genequery," -- queried"))
-        }else{print(paste0("Error: no results found for ",genequery))}
+        }else{print(paste0("Warning: no results found for ",genequery))}
       }
       if(length(json_data$genes)>0){
         fields_genes <- json_data$genes[[1]]; json_data$genes[[1]] <- NULL
@@ -135,7 +135,7 @@ phenoscanner <- function(snpquery=NULL, genequery=NULL, regionquery=NULL, catalo
           names(tables) <- fields
           results <- rbind(results,tables)
           print(paste0(regionquery," -- queried"))
-        }else{print(paste0("Error: no results found for ",regionquery))}
+        }else{print(paste0("Warning: no results found for ",regionquery))}
       }
       if(length(json_data$locations)>0){
         fields_regions <- json_data$locations[[1]]; json_data$locations[[1]] <- NULL
